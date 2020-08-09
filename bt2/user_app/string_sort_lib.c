@@ -26,6 +26,11 @@ int _atoi(char *str)
 void _itoa(int val, char* rs) {
 	//char rs[11]; // max of an integer is 2 ... ... ... \null
 	int i = 0;
+	if (!val) {
+		*rs = '0';
+		*(rs + 1) = '\0'; 
+		return; 
+	} 	
 	while (val != 0) {
 		rs[i++] = val%10 + '0';
 		val = val/10; 
